@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  persistence-postgresql:
+    image: postgres:13.2
+    environment:
+      - POSTGRES_USER=persistence
+      - POSTGRES_PASSWORD=persistence
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    # If you want to expose these ports outside your dev PC,
+    # remove the "127.0.0.1:" prefix
+    ports:
+      - "5432:5432"
